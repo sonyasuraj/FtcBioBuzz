@@ -1,14 +1,11 @@
-name: "Auto Assign Reviewers"
+# Set to true to add reviewers to pull requests
+addReviewers: true
 
-on:
-  pull_request:
-    types: [opened, ready_for_review]
+# The GitHub usernames of the collaborators you want to assign
+reviewers:
+  - surajramalingam
+  - prasannarajulu
+  - sonyasuraj
 
-jobs:
-  add-reviews:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Automatically Assign Reviewers
-        uses: kentaro-m/auto-assign-action@v2.0.1
-        with:
-          configuration-path: ".github/auto_assign.yml"
+# Set to 0 to add all the reviewers listed above
+numberOfReviewers: 2
